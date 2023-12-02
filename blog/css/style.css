@@ -51,35 +51,41 @@
 /* IMPORT FONTS */
 
 @font-face {
-    font-family: "ultra";
-    src: url('..fonts/serif/ultra-regular.tff') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "lato";
-    src: url('../fonts/sans-serif/lato-regular.ttf') format('truetype');
+    font-family: 'ultra';
+    src: url('..fonts/serif/ultra-regular.ttf'); format:('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'lato';
+    src: url('../fonts/snas-serif/lato-regular.ttf'); format:('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
-    font-family: "opensans";
-    src: url('../fonts/sans-serif/opensans-regular.ttf') format ('truetype');
+    font-family: 'roboto';
+    src: url('..fonts/sans-serif/roboto-regular.ttf'); format:('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 /*  TYPOGRAPHY  */
 
-p{
-    font-family: lato, Helvetica, sans-serif;
+p {
+    font-family: roboto, Ariel, Serif;
 }
 
 h1, h2, h3, h4 {
-    font-family: ultra, Georgia, serif;
+    font-family: lato, Helvetica, sans-serif;
     letter-spacing: 0.0325rem;
+}
+
+button {
+    font-family: ultra, Georgia, serif;
+    letter-spacing: 0.325rem;
+    font-weight: bolder;
 }
 
 h1 {
@@ -90,10 +96,16 @@ h1 {
 
 .highlight {
     display: inline-block;
-    font-family: opensans, Ariel, sans-serif;
+    font-family: ultra, Georgia, serif;
     border: 1px solid black;
-    padding: 1rem 1.5rem;
-    
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    border-top-left-radius: 1rem; 
+    border-bottom-right-radius: 1rem;
+    color: #f1eaea;
+    background-color: #405559;
+    box-shadow: 5px 5px 4px -1px #888;
+
 }
 
 /*  GENERAL SETUP AND DEFAULTS  */
@@ -108,7 +120,7 @@ html {
 
 body {
     margin: 1.5rem auto;
-    width: 90%;
+    width: 100%;
     min-width: 56.25rem;
 }
 
@@ -116,6 +128,7 @@ body {
 
 header {
     padding: 0.5rem 0rem 1rem 0rem;
+    text-align: center;
 }
 
 nav {
@@ -133,9 +146,26 @@ article {
     grid-row: 1;
 }
 
+button {
+    background-color: #405559;
+    border: #333;
+    padding: 1px;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: #333;
+}
+
 aside {
     grid-column: 2 / 3;
     grid-row: 1;
+    border-left: 1px solid #b26857;
+    padding-left: 0.5rem;
+}
+
+aside p {
+    border-bottom: 1px solid #b26857;
+    padding-bottom: 0.5rem;
 }
 
 .subsection {
@@ -158,15 +188,89 @@ figure {
     margin-right: 0.75rem;
 }
 
+button {
+    padding: 1rem;
+    border: none;
+    color: #fff;
+    background-color: #658991;
+    border-top-left-radius: 0.5rem; 
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    cursor: pointer;
+    
+}
+
 .subsection {
     margin: 1rem 0rem;
 }
 
-.subsection-figure {
+.subsection figure {
     margin: 0rem 0.25rem;
     background-color: #A66C4B;
 }
 
 .subsection figure figcaption {
     padding: 0.5rem 0.5rem;
+}
+
+/* LINKS AND NAVIGATION */
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 1.25rem 2rem;
+    font-size: 1.25rem;
+    font-family: ultra, Georgia, serif;
+    color: #839b9e;
+}
+
+nav {
+    border-top: 1px solid #405559;
+    border-bottom: 1px solid #405559;
+}
+
+/* Navigation Menu */
+
+nav {
+    padding-left: 0;
+    margin-top: 0.25rem;
+}
+
+nav a:focus, nav a:hover {
+    color: #A64B37;
+}
+
+nav a:active, nav a:visited {
+    color: #333;
+}
+
+nav a:visited {
+    text-transform: lowercase;
+}
+
+a:hover {
+    text-transform: uppercase;
+}
+
+/* || Footer Layout */
+
+footer {
+    clear:both;
+    overflow:auto;
+    margin:3% 2%;
+    border-top: 1px solid #333;
+   }
+
+.copyright {
+    font-size: 0.75rem;
+    float: left;
+}
+
+.attribution {
+    font-size: 0.75rem;
+    float: right;
 }
